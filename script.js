@@ -27,9 +27,10 @@ for(let i = 0; i < 2; i++){
         b = parseInt(prompt('Во сколько обойдется1?', 'введите число'));
 
     if((typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) === 'string' && (typeof(b) != null
-    && a !='' && b!= '' & a.length < 50)){
+    && a !='' && b != '' && a.length < 50)){
         appData.expenses[a] = b; // а станет свойством б станет значением
-    } else{
+        console.log("done");
+    } else {
             // прописать возврат к новому циклу
     }
 };
