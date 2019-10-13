@@ -76,10 +76,17 @@ const appData = {
     },
     chooseIncome: function(){
         let items = prompt('What can bring additional income', 'use the colon');
-        appData.income = items.split(', ');
-        appData.income.push(prompt('Something else?'));
-        appData.income.sort();
-        console.log(appData.income);
+            while (typeof(items) != 'string' || items.trim() == "" || items == null){
+                items = prompt('What can bring additional income', 'use the colon');
+            } 
+            appData.income = items.split(', ');
+            appData.income.push(prompt('Something else?'));
+            appData.income.sort();  
+            console.log(appData.income);
+            appData.income.forEach(function(){
+                alert(appData.income)
+            });
+
     },
 
 };
@@ -93,3 +100,7 @@ const appData = {
 // appData.checkSavings();
 // appData.chooseOptExpenses();
 appData.chooseIncome();
+for(let i in appData){
+    console.log(`Our programm consist of ${appData[i]}`);
+}
+
